@@ -2,8 +2,8 @@ import React from 'react';
 
 export default () => {
    return (
-      <div className="container mx-auto max-w-container">
-         <header className="flex justify-between items-center px-4 h-24">
+      <div className="container mx-auto max-w-container px-4">
+         <header className="flex justify-between items-center h-24">
             <h1 className="text-2xl font-bold">
                <span className="text-main">React</span> Notes
             </h1>
