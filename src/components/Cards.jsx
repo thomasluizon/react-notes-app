@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AddCard from './AddCard';
+import Notes from '../hook/Notes';
 
 export default class Cards extends Component {
    constructor(props) {
