@@ -24,6 +24,7 @@ export default class AddCard extends Component {
       const note = {
          id: this.generateRandomKey(20),
          text: this.state.textValue,
+         date: new Date().toLocaleDateString('pt-br'),
          isEditing: false,
       };
 
