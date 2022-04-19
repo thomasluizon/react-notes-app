@@ -12,19 +12,16 @@ export default class App extends Component {
          <>
             <Header />
             <div className="container mx-auto max-w-container px-4">
-               <form className="flex items-center border-4 rounded-lg border-main p-3">
+               <form className="flex gap-2 items-center border-4 rounded-lg border-main p-3">
                   <svg
-                     stroke="currentColor"
-                     fill="currentColor"
-                     stroke-width="0"
-                     viewBox="0 0 24 24"
-                     class="search-icon"
-                     height="1.4em"
-                     width="1.4em"
                      xmlns="http://www.w3.org/2000/svg"
+                     width="16"
+                     height="16"
+                     fill="currentColor"
+                     className="bi bi-search"
+                     viewBox="0 0 16 16"
                   >
-                     <path fill="none" d="M0 0h24v24H0z"></path>
-                     <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                   </svg>
                   <input
                      className="outline-0"

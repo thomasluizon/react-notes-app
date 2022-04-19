@@ -142,6 +142,8 @@ module.exports = {
          'gradient-to-l': 'linear-gradient(to left, var(--tw-gradient-stops))',
          'gradient-to-tl':
             'linear-gradient(to top left, var(--tw-gradient-stops))',
+         'gradient-main':
+            'linear-gradient(to top, rgb(9, 130, 77) 0%, rgb(48, 149, 117) 100%)',
       },
       backgroundOpacity: ({ theme }) => theme('opacity'),
       backgroundPosition: {
@@ -523,6 +525,7 @@ module.exports = {
          10: 'repeat(10, minmax(0, 1fr))',
          11: 'repeat(11, minmax(0, 1fr))',
          12: 'repeat(12, minmax(0, 1fr))',
+         main: 'repeat(auto-fit,minmax(250px,1fr))',
       },
       gridTemplateRows: {
          none: 'none',
