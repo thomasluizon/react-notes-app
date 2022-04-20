@@ -5,9 +5,6 @@ import Note from './Note';
 export default class Cards extends Component {
    constructor(props) {
       super(props);
-      if (!localStorage.getItem('notes-data')) {
-         localStorage.setItem('notes-data', JSON.stringify(this.state.notes));
-      }
       const notes = JSON.parse(localStorage.getItem('notes-data'));
       this.state = {
          notes: notes || [],
