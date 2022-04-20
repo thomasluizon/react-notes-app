@@ -14,10 +14,8 @@ export default class App extends Component {
    handleDarkMode = () => {
       const root = document.documentElement;
       const isDarkMode = this.state.darkMode;
+      isDarkMode ? root.classList.remove('dark') : root.classList.add('dark');
       this.setState({ darkMode: !isDarkMode });
-      this.state.darkMode
-         ? root.classList.remove('dark')
-         : root.classList.add('dark');
    };
 
    handleFilterChange = e => {

@@ -8,6 +8,10 @@ export default props => {
    filtered.forEach((note, noteIndex) => {
       notesDiv.push(
          <li
+            onDoubleClick={() => {
+               props.editItem(note.id);
+               props.passInfo(note.id);
+            }}
             key={note.id}
             className="min-h-[170px] bg-main flex gap-1 flex-col p-2 rounded-xl"
          >
