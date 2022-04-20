@@ -72,7 +72,6 @@ export default class Cards extends Component {
             ) : (
                <>
                   <Note
-                     passInfo={this.passInfo}
                      editItem={this.editItem}
                      notes={this.state.notes}
                      removeItem={this.removeItem}

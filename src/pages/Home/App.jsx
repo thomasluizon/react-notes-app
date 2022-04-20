@@ -7,7 +7,7 @@ export default class App extends Component {
       super(props);
       this.state = {
          filterValue: '',
-         darkMode: false,
+         darkMode: localStorage.getItem('dark-mode') == 'true' ? true : false,
       };
    }
 
@@ -21,6 +21,22 @@ export default class App extends Component {
    handleFilterChange = e => {
       this.setState({ filterValue: e.target.value });
    };
+
+   saveLocal = () => {
+      localStorage.setItem('dark-mode', JSON.stringify(this.state.darkMode));
+   };
+
+   componentDidMount() {
+      window.addEventListener('beforeunload', this.saveLocal);
+      const root = document.documentElement;
+      localStorage.getItem('dark-mode') == 'true'
+         ? root.classList.add('dark')
+         : root.classList.remove('dark');
+   }
+
+   componentWillUnmount() {
+      window.removeEventListener('beforeunload', this.saveLocal);
+   }
 
    render() {
       return (
