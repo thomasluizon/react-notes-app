@@ -28,8 +28,10 @@ export default class AddCard extends Component {
          isEditing: false,
       };
 
-      this.props.addNote(note);
-      this.setState({ textValue: '' });
+      if (this.state.textValue.length > 0) {
+         this.props.addNote(note);
+         this.setState({ textValue: '' });
+      }
    };
 
    render() {
