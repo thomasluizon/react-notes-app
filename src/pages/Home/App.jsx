@@ -5,11 +5,12 @@ import Cards from '../../components/Cards';
 export default class App extends Component {
    constructor(props) {
       super(props);
-      this.state = {
-         filterValue: '',
-         darkMode: false,
-      };
    }
+
+   state = {
+      filterValue: '',
+      darkMode: false,
+   };
 
    handleDarkMode = () => {
       const root = document.documentElement;
