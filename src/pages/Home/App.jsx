@@ -15,7 +15,7 @@ export default class App extends Component {
       const root = document.documentElement;
       const isDarkMode = this.state.darkMode;
       this.setState({ darkMode: !isDarkMode });
-      this.state.darkMode == 'true' || this.state.darkMode
+      this.state.darkMode
          ? root.classList.remove('dark')
          : root.classList.add('dark');
    };
