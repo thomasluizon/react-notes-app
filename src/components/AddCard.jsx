@@ -3,11 +3,10 @@ import React, { Component } from 'react';
 export default class AddCard extends Component {
    constructor(props) {
       super(props);
+      this.state = {
+         textValue: '',
+      };
    }
-
-   state = {
-      textValue: '',
-   };
 
    generateRandomKey = l => {
       let result = '';
