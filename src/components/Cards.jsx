@@ -12,6 +12,9 @@ export default class Cards extends Component {
       this.state = {
          notes: notes || [],
       };
+
+      this.componentDidMount = this.componentDidMount.bind(this);
+      this.componentWillUnmount = this.componentWillUnmount.bind(this);
    }
 
    addNote = data => {
