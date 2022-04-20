@@ -10,7 +10,7 @@ export default class Cards extends Component {
       }
       const notes = JSON.parse(localStorage.getItem('notes-data'));
       this.state = {
-         notes: notes,
+         notes: notes || [],
       };
    }
 
@@ -19,14 +19,24 @@ export default class Cards extends Component {
       this.setState({
          notes: this.state.notes,
       });
-      localStorage.setItem('notes-data', JSON.stringify(this.state.notes));
    };
 
    removeItem = noteIndex => {
       this.state.notes.splice(noteIndex, 1);
       this.setState({ notes: this.state.notes });
+   };
+
+   saveLocal = () => {
       localStorage.setItem('notes-data', JSON.stringify(this.state.notes));
    };
+
+   componentDidMount() {
+      window.addEventListener('beforeunload', this.saveLocal);
+   }
+
+   componentWillUnmount() {
+      window.removeEventListener('beforeunload', this.saveLocal);
+   }
 
    render() {
       return (

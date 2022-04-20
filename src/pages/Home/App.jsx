@@ -5,11 +5,20 @@ import Cards from '../../components/Cards';
 export default class App extends Component {
    constructor(props) {
       super(props);
-
       this.state = {
          filterValue: '',
+         darkMode: false,
       };
    }
+
+   handleDarkMode = () => {
+      const root = document.documentElement;
+      const isDarkMode = this.state.darkMode;
+      this.setState({ darkMode: !isDarkMode });
+      this.state.darkMode == 'true' || this.state.darkMode
+         ? root.classList.remove('dark')
+         : root.classList.add('dark');
+   };
 
    handleFilterChange = e => {
       this.setState({ filterValue: e.target.value });
@@ -18,7 +27,7 @@ export default class App extends Component {
    render() {
       return (
          <>
-            <Header />
+            <Header handleDarkMode={this.handleDarkMode} />
             <div className="container mx-auto max-w-container px-4">
                <form className="flex gap-2 items-center border-4 rounded-lg border-main p-3 dark:bg-white">
                   <svg
@@ -40,7 +49,10 @@ export default class App extends Component {
                   />
                </form>
             </div>
-            <Cards filter={this.state.filterValue} />
+            <Cards
+               darkMode={this.state.darkMode}
+               filter={this.state.filterValue}
+            />
          </>
       );
    }
